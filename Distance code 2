@@ -1,0 +1,29 @@
+if (Distance>=100)
+{
+    GPIO_PORTF_DATA_R=0x02;
+}
+else
+{
+    GPIO_PORTF_DATA_R=0;
+}
+float Total_Distance(float long1, float long2, float lat1, float lat2)
+{
+float dlong = deg_to_rad(long2 - long1);
+float dlat  = deg_to_rad(lat2 - lat1);
+float phi1 = deg_to_rad(lat1);
+float phi2 = deg_to_rad(lat2);
+// Haversine formula
+float a = pow(sin((0.5 * dlat)), 2) + cos(phi1) * cos(phi2) * pow(sin((0.5 * dlong)), 2);
+float d = 2 * R * asin(sqrt(a));
+Dis = Dis + d;
+return Dis;
+}
+//Separating the data in the GPSValues array by comma
+index = 0;
+token = strtok(GPS_values,comma);
+while( token != NULL )
+{
+strcpy(parseValue[index], token);
+token = strtok(NULL,comma);
+index++;
+}
