@@ -215,6 +215,7 @@ int main()
 
     lcd_init();
     uart_init();
+    led_init();
 
     while(1)
     {
