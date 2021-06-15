@@ -1,0 +1,19 @@
+degrees=latitude/100;
+minutes=latitude-(double)(degrees*100);
+seconds=minutes/60.00;
+Lat=degrees+seconds;
+
+sprintf(latitudeIs,"%f", Lat);
+degrees=longitude/100;
+minutes=longitude-(double)(degrees*100);
+seconds=minutes/60.00;
+Lon=degrees+seconds;
+
+sprintf(longitudeIs,"%f",Lon);
+
+lat = Lat;
+lon = Lon;
+
+
+printf("lat = %s\n",latitudeIs);
+printf("lon = %s\n\n\n",longitudeIs);
